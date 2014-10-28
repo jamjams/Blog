@@ -18,5 +18,6 @@
 			echo "Successfully created database " . $database;
 			//concatinates name of database.
 		}
+	//connection closes	
 	$connection->close();
 ?>
