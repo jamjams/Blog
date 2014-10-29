@@ -9,15 +9,22 @@
 
 	$exists = $connection->select_db($database);
 //checking if database exists. Tell databse to create database. Query allows us to do that.
-	if(!$exists){
+	if(!$exists) {
 		$query = $connection->query("CREATE DATABASE $database");
 		//value being stored is either true or false
-	}
+	
 		//if the value is true, the code below is executed. Outputs the $query message.
-		if($query){
-			echo "Successfully created database " . $database;
+		if($query) {
+			echo "Successfully created database: " . $database;
 			//concatinates name of database.
 		}
-	//connection closes	
+	}
+	// runs if the database already exists.
+	else {
+		echo "Database already exists.";
+	}
+	/*connection closes 
+	every
+	*/	
 	$connection->close();
 ?>
