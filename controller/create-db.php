@@ -23,6 +23,14 @@
 	else {
 		echo "Database already exists.";
 	}
+//Makes a table. Gives the name of the table "posts". has an id that every blog post has. NOT NULL means the blog post can't be empty. Never can be a blog post that is empty.
+	$query = $connection->query("CREATE TABLE posts ("
+		. "id int(11) NOT NULL AUTO_INCREMENT."
+		// title of each blog post. At least 255 character for the title
+		. "title varchar (255) NOT NULL,"
+		. "post text NOT NULL,"
+		. "PRIMARY KEY (id)");
+	//Now able to put information into the datatable.
 	/*connection closes 
 	every
 	*/	
