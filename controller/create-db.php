@@ -4,7 +4,7 @@
 	$connection = new mysqli($host, $username, $password);
 	//if there is a connection, the code is executed. the concatination is used to describe the error.
 	if($connection->connect_error) {
-		die("Error: " . $connection->connect_error);
+		die("<p>Error: " . $connection->connect_error . "</p>");
 	}
 
 	$exists = $connection->select_db($database);
@@ -15,24 +15,33 @@
 	
 		//if the value is true, the code below is executed. Outputs the $query message.
 		if($query) {
-			echo "Successfully created database: " . $database;
+			echo "<p>Successfully created database: " . $database . "</p>";
 			//concatinates name of database.
 		}
 	}
 	// runs if the database already exists.
 	else {
-		echo "Database already exists.";
+		echo "<p>Database already exists.</p>";
 	}
 //Makes a table. Gives the name of the table "posts". has an id that every blog post has. NOT NULL means the blog post can't be empty. Never can be a blog post that is empty.
 	$query = $connection->query("CREATE TABLE posts ("
-		. "id int(11) NOT NULL AUTO_INCREMENT."
+		. "id int(11) NOT NULL AUTO_INCREMENT,"
 		// title of each blog post. At least 255 character for the title
-		. "title varchar (255) NOT NULL,"
+		. "title varchar(255) NOT NULL,"
 		. "post text NOT NULL,"
-		. "PRIMARY KEY (id)");
+		. "PRIMARY KEY (id))");
 	//Now able to put information into the datatable.
 	/*connection closes 
 	every
 	*/	
+	if($query) {
+		//lets us know that the table posts was successfully created.
+		echo "<p>Successfully created table: posts</p>";
+	}
+	else {
+		//table already exists.
+		echo "<p>$connection->error</p>";
+	}
+
 	$connection->close();
 ?>
