@@ -19,7 +19,7 @@
 			//concatinates name of database.
 		}
 	}
-	// runs if the database already exists.
+	// runs if the database already exists. 
 	else {
 		echo "<p>Database already exists.</p>";
 	}
