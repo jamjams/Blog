@@ -15,4 +15,8 @@
 		<!-- we can put as much text aws we want which differs from the input box -->
 		<textarea name="post"></textarea>
 	</div>
+
+	<div>
+		<button type="submit">Submit yo post!</button>
+	</div>
 </form>

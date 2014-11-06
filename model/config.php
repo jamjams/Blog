@@ -1,3 +1,3 @@
 <?php
-//whenever we use variable path, we insert the below path.
+//whenever we use variable $path, the below path is inserted.
 	$path = "/blog/";

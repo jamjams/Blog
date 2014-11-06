@@ -1,3 +1,17 @@
-body{
+html {
 	background-color: purple;
+}
+
+/* iPhone */ 
+@media (max-width: 320px) {
+    html {
+    	background-color: green;
+    }
+}
+
+/* Ipad */ 
+@media (max-width: 1024px) {
+	html {
+		background-color: red;
+	}
 }
