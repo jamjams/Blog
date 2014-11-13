@@ -1,7 +1,21 @@
 <?php
+	require_once(__DIR__ . "/../model/database.php");
+// creating a connectionmto database and storing the connection with the $connection variable
+	$connection = new mysqli($host, $username, $password, $database);
+
 // we want to recieve the information that is being sent. We want to filter input and we want to get it from posts and we are grabbing it from title. And we are also filtering it to make sure it is a string. Trying to protect us from malicious stuff.
 	$title = filter_input(INPUT_POST, "title", FILTER_SANITIZE_STRING);
-	$post = filter_input(INPUT_POST, "posts", FILTER_SANITIZE_STRING);
-	echo "<p>Title: $title</p>";
-	echo "<p>Post: $post</p>";
+	$post = filter_input(INPUT_POST, "post", FILTER_SANITIZE_STRING);
+	//this query is going to store a true or false value. Made a posts table
+	$query = $connection->query("INSERT INTO posts SET title = '$title', post = '$post'");
+
+	if ($query) {
+		// successfully inserted title into post
+		echo "<p>Successfully inserted post: $title</p>";
+	}
+	else {
+		echo "<p>$connection->error</p>";
+	}
+
+	$connection->close();
 ?>	

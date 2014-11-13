@@ -1,13 +1,18 @@
+<?php 
+// connecting controller to the blog post form.
+	require_once(__DIR__ . "/../model/config.php");
+ ?>
+
 <h1>Create Blog Post</h1>
 
 <!-- WE want the form to take in certain information and put that info in a table -->
-<form>
+<form method="post" action="<?php echo $path . "controller/create-posts.php"; ?>">
 <!-- div box for title -->
 	<div>
 	<!-- text displayed in front of text box -->
 		<label for="title">Title: </label>
 		<!-- input box allows us to put text in the box -->
-		<input type="txt" name="title" />
+		<input type="txt" name="title"/>
 	</div>
 <!-- div box for posts -->
 	<div>
@@ -17,6 +22,6 @@
 	</div>
 
 	<div>
-		<button type="submit">Submit yo post!</button>
+		<button type="submit">Submit your post!</button>
 	</div>
 </form>
