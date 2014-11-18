@@ -1,5 +1,5 @@
 <?php
-	require_once(__DIR__ . "/../model/database.php");
+	require_once(__DIR__ . "/../model/config.php");
 // creating a connectionmto database and storing the connection with the $connection variable
 	$connection = new mysqli($host, $username, $password, $database);
 
@@ -17,5 +17,5 @@
 		echo "<p>$connection->error</p>";
 	}
 
-	$connection->close();
+	$connection->close(); 
 ?>	
