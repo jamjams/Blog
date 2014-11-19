@@ -1,7 +1,7 @@
 <?php
 //checks if there is a connection error. it is an if statement.
 	require_once(__DIR__ . "/../model/config.php");
-	$connection = new mysqli($host, $username, $password);
+	//$connection = new mysqli($host, $username, $password);
 	//if there is a connection, the code is executed. the concatination is used to describe the error.
 	if($connection->connect_error) {
 		die("<p>Error: " . $connection->connect_error . "</p>");

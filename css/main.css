@@ -1,7 +1,18 @@
 html {
 	background-color: purple;
 }
+.titlebox{
+	margin-bottom: 10px;
+}
 
+.postbox{
+	padding-left: 3px;
+}
+
+.submitbutton{
+	margin-top: 5px;
+	padding-left: 35px;
+}
 
 /* Ipad */ 
 @media (max-width: 1024px) {

@@ -1,7 +1,7 @@
 <?php
 	require_once(__DIR__ . "/../model/config.php");
-// creating a connectionmto database and storing the connection with the $connection variable
-	$connection = new mysqli($host, $username, $password, $database);
+// creating a connection to database and storing the connection with the $connection variable
+	//$connection = new mysqli($host, $username, $password, $database);
 
 // we want to recieve the information that is being sent. We want to filter input and we want to get it from posts and we are grabbing it from title. And we are also filtering it to make sure it is a string. Trying to protect us from malicious stuff.
 	$title = filter_input(INPUT_POST, "title", FILTER_SANITIZE_STRING);
@@ -17,5 +17,5 @@
 		echo "<p>$connection->error</p>";
 	}
 
-	$connection->close(); 
+	
 ?>	

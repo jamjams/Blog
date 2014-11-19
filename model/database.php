@@ -27,7 +27,7 @@
 				die("<p>Error: " . $this->connection->connect_error . "</p>");
 	}
 		}
-
+// functions are blocks of codes that can perform operations over and over again or go off at a certain pont in our code.
 		public function closeConnection() {
 			// isset: it checks if the variable has been set or not. Checking whether of not there is somthing in the variable. 
 			if(isset($this->connection)) {
@@ -36,7 +36,11 @@
 		}
 
 		public function query($string) {
+			$this->openConnection;
 
+			$query = $this->connection->query($string);
+			$this->closeConnection();
+			return $query;
 		}
 	}
 ?>
