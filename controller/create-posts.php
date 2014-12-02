@@ -7,14 +7,14 @@
 	$title = filter_input(INPUT_POST, "title", FILTER_SANITIZE_STRING);
 	$post = filter_input(INPUT_POST, "post", FILTER_SANITIZE_STRING);
 	//this query is going to store a true or false value. Made a posts table
-	$query = $connection->query("INSERT INTO posts SET title = '$title', post = '$post'");
+	$query = $_SESSION["connection"]->query("INSERT INTO posts SET title = '$title', post = '$post'");
 
 	if ($query) {
 		// successfully inserted title into post
 		echo "<p>Successfully inserted post: $title</p>";
 	}
 	else {
-		echo "<p>$connection->error</p>";
+		echo "<p>" . $_SESSION["connection"]->error . "</p>";
 	}
 
 	
