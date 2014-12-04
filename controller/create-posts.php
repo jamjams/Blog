@@ -1,4 +1,5 @@
 <?php
+	
 	require_once(__DIR__ . "/../model/config.php");
 // creating a connection to database and storing the connection with the $connection variable
 	//$connection = new mysqli($host, $username, $password, $database);
@@ -11,8 +12,10 @@
 
 	if ($query) {
 		// successfully inserted title into post
-		echo "<p>Successfully inserted post: $title</p>";
+		echo "<p>Title: $title</p>";
+		echo "<p>Post: $post</p>";
 	}
+
 	else {
 		echo "<p>" . $_SESSION["connection"]->error . "</p>";
 	}

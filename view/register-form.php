@@ -1,5 +1,6 @@
 <!-- created a register form for users -->
-<form>
+<h1>Register Here!</h1>
+<form method="post" action="<?php echo $path . "controller/create-post.php"; ?>">
 	<div>
 		<label for="email">Email: </label>
 		<input type="text" name="email" />
