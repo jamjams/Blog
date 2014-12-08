@@ -28,6 +28,7 @@
 		. "email varchar(50) NOT NULL,"
 		. "password char(128) NOT NULL, "
 		. "salt char(128) NOT NULL,"
+		. "DateTime datetime NOT NULL ,"
 		. "PRIMARY KEY(id))");
 	if($query) {
 		echo "<p>Successfully created table: users</p>";
